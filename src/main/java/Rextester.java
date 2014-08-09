@@ -1,9 +1,3 @@
-//Title of this code
-//'main' method must be in a class 'Rextester'.
-
-import java.util.*;
-import java.lang.*;
-
 class Rextester
 {  
     public static void main(String args[])
