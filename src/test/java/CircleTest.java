@@ -43,12 +43,12 @@ public class CircleTest {
 	public void shouldFormatCirclePresentation() {
 		CirclePresenter circlePresent = new CirclePresenter();
 		
-		double area = 19.63;
-		double circ = 15.71;
-		int radius = 2;
-		int diameter = 5;
+		double area = 1.00;
+		double circ = 2.00;
+		int radius = 3;
+		int diameter = 4;
 
-		assertEquals("Area is 19.63 and circumference is 15.71 for circle with radius 2 and diameter 5",
+		assertEquals("Area is 1.00 and circumference is 2.00 for circle with radius 3 and diameter 4",
         		circlePresent.present(circ, area, diameter, radius));
 	}
 }
