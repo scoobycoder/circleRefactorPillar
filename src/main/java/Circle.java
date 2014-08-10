@@ -1,40 +1,33 @@
+import java.text.DecimalFormat;
+
 
 public class Circle {
 
-	private int diameter;
-	private Double area;
-	private Double circ;
-	private int radius;
+	private double diameter;
 
-	public Circle(int d) {
+	public Circle(double d) {
 		diameter = d;
 	}
 	
-	private void calc() {
-		calcRadius();
-		calcArea();
-		calcCirc();
+	public double calcRadius() {
+		return diameter / 2;
 	}
 	
-	private void calcRadius() {
-		radius = (diameter / 2);
-	}
-	
-	private void calcArea() {
+	public DecimalFormat calcArea() {
         double radius;
-        radius = diameter / 2;
-        area = Math.PI * radius * radius;
+		radius = diameter / 2;
+		DecimalFormat area = formatDecimal(Math.PI * radius * radius);
+		return area;
 	}
 
-	private void calcCirc() {
-		circ =  Math.PI * diameter;
+	public DecimalFormat calcCirc() {
+		DecimalFormat circ = formatDecimal(Math.PI * diameter);
+		return circ; 
 	}
-
-
-	public String descr() {
-		calc();
-		return String.format("Area is %.2f and circumference is %.2f for circle with radius %d and diameter %d"
-				, area, circ, radius, diameter);
+	
+	private DecimalFormat formatDecimal(double number) {
+		DecimalFormat df = new DecimalFormat("#.00");
+		df.format(number);
+		return df;
 	}
-
 }
